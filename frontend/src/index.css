@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+
+.gradient {
+  --gradient-from: #6a11cb;
+  --gradient-to: #2575fc;
+  --gradient-direction: to right;
+
+  background-image: linear-gradient(
+    var(--gradient-direction),
+    var(--gradient-from),
+    var(--gradient-to)
+  );
+}
+
+.gradient-right {
+  --gradient-direction: to right;
+}
+
+.gradient-left {
+  --gradient-direction: to left;
+}
+
+.gradient-top {
+  --gradient-direction: to top;
+}
+
+.gradient-bottom {
+  --gradient-direction: to bottom;
+}
+
+.gradient-diagonal {
+  --gradient-direction: to bottom right;
+}
+
+.gradient-sunset {  
+  --gradient-from: #ff512f;
+  --gradient-to: #d38414;
+}
+
+.gradient-sun {
+  --gradient-from: #ff930f;
+  --gradient-to: #fff95b;
+}
+
+.bg-instagram {
+  --gradient-from: #ff0f7b;
+  --gradient-to: #bf0fff;
+}
+
+.bg-tiktok {
+  --gradient-from: #c369ff;
+  --gradient-to: #bf0fff;
+}
+
+
+.gradient-ocean {
+  --gradient-from: #2193b0;
+  --gradient-to: #6dd5ed;
+}
+
+.gradient-forest {
+  --gradient-from: #11998e;
+  --gradient-to: #38ef7d;
+}
+
+.gradient-purple-pink {
+  --gradient-from: #a18cd1;
+  --gradient-to: #fbc2eb;
+}
