@@ -1,21 +1,19 @@
+import { useState } from 'react'
 import Features from "./components/Features"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
-import Packages from "./components/Packages"
-import Testimonials from "./components/Testimonials"
+import TopBanner from "./components/TopBanner"
+
 function App() {
   return (
-    <>
-      <div>
-        <Navbar/>
-        <Header/>
-        <Features/>
-        <Testimonials/>
-        <Packages/>
-        <Footer/>
-      </div>
-    </>
+    <div className="min-h-screen bg-gray-50">
+      <TopBanner />
+      <Navbar />
+      <Header />
+      <Features/>
+      <Footer/>
+    </div>
   )
 }
 

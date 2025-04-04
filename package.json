@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "vite"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.5.0",
+    "swiper": "^11.2.6"
+  }
+}

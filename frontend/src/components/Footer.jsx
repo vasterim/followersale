@@ -1,59 +1,81 @@
+import React from "react";
+
 export default function Footer() {
-    return (
-      <footer className="bg-black text-white py-12 mt-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div>
-            <h3 className="text-2xl font-bold text-transparent bg-clip-text gradient mb-4">
+  const footerLinks = {
+    HİZMETLER: [
+      { name: "Instagram", href: "/instagram" },
+      { name: "TikTok", href: "/tiktok" },
+      { name: "Fiyatlandırma", href: "/pricing" },
+    ],
+    ŞİRKET: [
+      { name: "Hakkımızda", href: "/about" },
+      { name: "İletişim", href: "/contact" },
+      { name: "Fiyatlandırma", href: "/pricing" },
+    ],
+    İLETİŞİM: [
+      { name: "E-posta: info@likeboosty.com", href: "mailto:info@likeboosty.com" },
+      { name: "Telegram", href: "https://t.me/likeboosty" },
+    ],
+  };
+
+  return (
+    <footer className="border-t border-gray-100 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          {/* Logo ve Açıklama */}
+          <div className="md:col-span-3">
+            <a href="/" className="text-blue-600 text-xl font-semibold">
               Likeboosty
-            </h3>
-            <p className="text-sm text-gray-400">
-              Instagram ve TikTok takipçi hizmetlerinde güvenilir adres. Sosyal
-              medyada öne çıkmak için Likeboosty yanınızda.
+            </a>
+            <p className="mt-4 text-sm text-gray-600">
+              Sosyal medya hesaplarınızı güçlendirin, etkileşiminizi artırın.
             </p>
           </div>
-  
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Hızlı Erişim</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Anasayfa
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Hakkında
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Instagram Paketleri
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  TikTok Paketleri
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  İletişim
-                </a>
-              </li>
-            </ul>
+
+          {/* Linkler */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title} className="md:col-span-3">
+              <h3 className="font-medium text-gray-900">{title}</h3>
+              <ul className="mt-4 space-y-3">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Alt Kısım */}
+        <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-sm text-gray-600">
+            © 2023 Likeboosty
           </div>
-  
-          <div>
-            <h4 className="text-lg font-semibold mb-4">İletişim</h4>
-            <p className="text-sm text-gray-300 mb-2">support@likeboosty.com</p>
-            <p className="text-sm text-gray-300">+90 534 599 8646</p>
+          <div className="flex items-center space-x-6">
+            <button className="text-sm text-gray-600 hover:text-gray-900">
+              <span className="flex items-center gap-1">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+                TR
+              </span>
+            </button>
+            <a href="/terms" className="text-sm text-gray-600 hover:text-gray-900">
+              Kullanım Şartları
+            </a>
+            <a href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
+              Gizlilik Politikası
+            </a>
           </div>
         </div>
-  
-        <div className="mt-12 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} Likeboosty. Tüm hakları saklıdır.
-        </div>
-      </footer>
-    );
-  }
+      </div>
+    </footer>
+  );
+}
   
